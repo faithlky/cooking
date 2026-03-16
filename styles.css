@@ -1,3 +1,55 @@
-body {
+a {
+    color: black;
+    text-decoration: none;
+    background-image: linear-gradient(skyblue, skyblue), linear-gradient(to right, #ff98c5, #db94ff, #8eb0ff);
+    background-size: 100% 0.1em, 0 0.1em;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 500ms;
+    display: inline-block;
+}
+
+a:hover {
+    background-size: 0 0.1em, 100% 0.1em;
+}
+
+body{
     font-family: "Figtree", sans-serif;
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: aliceblue;
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
