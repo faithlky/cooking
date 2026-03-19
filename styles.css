@@ -36,6 +36,7 @@ h1 {
 
 img {
     max-width: 100%;
+    max-height: 500px;
     height: auto;
     display: block;
     margin: auto;
@@ -57,6 +58,20 @@ nav {
 
 .centered {
     text-align: center;
+}
+
+.horizontal-scroll {
+    overflow: auto;
+    white-space: nowrap;
+    scrollbar-color: #d6cfb9 #fffbee;
+    scrollbar-width: thin;
+}
+
+.horizontal-scroll img {
+    margin-right: 0.5rem;
+    display: inline-block;
+    max-height: 250px;
+    width: auto;
 }
 
 .images-in-a-row {
