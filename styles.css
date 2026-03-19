@@ -19,6 +19,7 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: rgb(255, 254, 247);
 }
 
 footer {
@@ -52,7 +53,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: aliceblue;
 }
 
 .centered {
