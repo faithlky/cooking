@@ -16,29 +16,35 @@ a:hover {
 body{
     font-family: "Figtree", sans-serif;
     margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 footer {
     text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
     font-size: 0.8rem;
 }
 
 h1 {
     text-align: center;
+    background-color: rgb(255, 248, 227);
+    padding: 0.5em;
+    border-radius: 0.5em;
 }
 
 img {
     max-width: 100%;
     height: auto;
+    display: block;
+    margin: auto;
 }
 
 main {
     max-width: 720px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 1rem 2rem;
+    flex: 1;
 }
 
 nav {
@@ -49,7 +55,38 @@ nav {
     background-color: aliceblue;
 }
 
+.centered {
+    text-align: center;
+}
+
+.images-in-a-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.images-in-a-row img {
+    height: auto;
+    width: auto;
+    display: block;
+}
+
+.img-caption {
+    color: gray;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.recipe-index-list > li {
+    margin-bottom: 0.5em;
+}
+
 .site-title {
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+.subtitle {
+    margin-top: -0.5em;
+    text-align: center;
+    color: gray;
 }
