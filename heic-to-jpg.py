@@ -36,7 +36,7 @@ def convert_folder(recipe_name, recipe_step, output_folder=None):
             file_number += 1
 
             input_path = os.path.join(input_folder, filename)
-            output_path = os.path.join(output_folder, f"recipe_{recipe_name}_{recipe_step}_{file_number}.jpg")
+            output_path = os.path.join(output_folder, f"{recipe_name}_{recipe_step}_{file_number}.jpg")
 
             # skip if already converted
             if os.path.exists(output_path):

@@ -46,6 +46,11 @@ img {
     margin: auto;
 }
 
+img.small-img {
+    max-height: 350px;
+    margin-left: 0;
+}
+
 main {
     width: 100%;
     max-width: 720px;
@@ -78,7 +83,7 @@ nav {
 }
 
 .horizontal-scroll img {
-    max-height: 250px;
+    max-height: 350px;
     width: auto;
     flex-shrink: 0;
 }
@@ -224,6 +229,13 @@ nav {
 
 @media (max-width: 640px) {
 
+    img.small-img {
+        max-height: 250px;
+    }
+
+    .horizontal-scroll img {
+        max-height: 250px;
+    }
     .horizontal-scroll img.video-row {
         max-height: 300px;
     }

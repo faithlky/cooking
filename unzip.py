@@ -2,7 +2,8 @@ import zipfile
 import os
 import sys
 
-def unzip_file(folder_containing_zip_file, extract_to=None):
+def unzip_file(recipe_name, extract_to=None):
+    folder_containing_zip_file = "assets/recipe_" + recipe_name
     
     # find the zip file in the folder
     zip_files = [f for f in os.listdir(folder_containing_zip_file) if f.endswith('.zip')]
@@ -32,4 +33,4 @@ def unzip_file(folder_containing_zip_file, extract_to=None):
 
 unzip_file(sys.argv[1])
 
-# run this in terminal: python unzip.py path/to/folder/with/zipfile
+# run this in terminal: python unzip.py recipename
