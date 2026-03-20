@@ -17,7 +17,7 @@ I'll be adding more recipes progressively. I'm also thinking of compiling things
 - For videos: upload to YouTube (unlisted), it'll be a Short so change `shorts/` in the URL to `watch?v=`, click Share and copy the iframe embed. Adjust the width and height.
 
 <details>
-<summary> More tedious process that I previously used for the bakstik recipe, now solved!</summary>
+<summary> More tedious process that I used previously for the bakstik recipe, now solved!</summary>
 
 > 1. upload photos from phone to Temp google drive folder
 > 2. Ctrl+A to download zip file of all the photos, in HEIC
