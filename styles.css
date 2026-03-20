@@ -84,7 +84,7 @@ nav {
     position: absolute;
     right: 0;
     top: 0;
-    width: 3.5rem;
+    width: 2.5rem;
     height: 100%;
     background: linear-gradient(to right, transparent, #fffbee);
     pointer-events: none;
@@ -97,7 +97,7 @@ nav {
     position: absolute;
     left: 0;
     top: 0;
-    width: 3.5rem;
+    width: 2.5rem;
     height: 100%;
     background: linear-gradient(to left, transparent, #fffbee);
     pointer-events: none;
