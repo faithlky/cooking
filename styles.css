@@ -223,20 +223,9 @@ nav {
 }
 
 @media (max-width: 640px) {
-    main {
-        padding: 0.75rem 1rem;
-    }
-
-    .horizontal-scroll {
-        gap: 0.4rem;
-    }
-
-    .horizontal-scroll img {
-        max-height: 180px;
-    }
 
     .horizontal-scroll img.video-row {
-        max-height: 280px;
+        max-height: 300px;
     }
 
     .horizontal-scroll iframe {
@@ -245,7 +234,15 @@ nav {
     }
 
     .horizontal-scroll-arrow {
-        font-size: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .horizontal-scroll-arrow.left {
+        left: 0.25rem;
+    }
+
+    .horizontal-scroll-arrow.right {
+        right: 0.25rem;
     }
 
     .horizontal-scroll-wrapper::after,
