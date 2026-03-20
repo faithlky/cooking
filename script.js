@@ -27,5 +27,30 @@ function layoutImageRow() {
     });
 }
 
-window.addEventListener("load", layoutImageRow);
-window.addEventListener("resize", layoutImageRow);
+function updateScrollUI() {
+    document.querySelectorAll(".horizontal-scroll-wrapper").forEach(wrapper => {
+        const scroll = wrapper.querySelector(".horizontal-scroll");
+        if (!scroll) return;
+        const isOverflowing = scroll.scrollWidth > scroll.clientWidth;
+        const isAtStart = scroll.scrollLeft <= 0;
+        const isAtEnd = scroll.scrollLeft + scroll.clientWidth >= scroll.scrollWidth - 1;
+        wrapper.classList.toggle("at-start", isAtStart);
+        wrapper.classList.toggle("at-end", isAtEnd);
+        wrapper.classList.toggle("scrolled", !isAtStart);
+        wrapper.classList.toggle("is-overflowing", isOverflowing);
+    });
+}
+
+window.addEventListener("load", () => {
+    layoutImageRow();
+    updateScrollUI();
+});
+
+window.addEventListener("resize", () => {
+    layoutImageRow();
+    updateScrollUI();
+});
+
+document.querySelectorAll(".horizontal-scroll").forEach(el => {
+    el.addEventListener("scroll", updateScrollUI);
+});

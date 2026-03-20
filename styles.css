@@ -61,17 +61,102 @@ nav {
 }
 
 .horizontal-scroll {
-    overflow: auto;
-    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    overflow-x: auto;
     scrollbar-color: #d6cfb9 #fffbee;
     scrollbar-width: thin;
 }
 
 .horizontal-scroll img {
-    margin-right: 0.5rem;
-    display: inline-block;
     max-height: 250px;
     width: auto;
+    flex-shrink: 0;
+}
+
+.horizontal-scroll-wrapper {
+    position: relative;
+}
+
+.horizontal-scroll-wrapper::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 3.5rem;
+    height: 100%;
+    background: linear-gradient(to right, transparent, #fffbee);
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.horizontal-scroll-wrapper::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3.5rem;
+    height: 100%;
+    background: linear-gradient(to left, transparent, #fffbee);
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.horizontal-scroll-wrapper.at-start::before {
+    opacity: 0;
+}
+
+.horizontal-scroll-wrapper.scrolled::before {
+    opacity: 1;
+}
+
+.horizontal-scroll-wrapper.at-end::after {
+    opacity: 0;
+}
+
+.horizontal-scroll-arrow {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.horizontal-scroll-arrow.left {
+    left: 0.5rem;
+}
+
+.horizontal-scroll-arrow.right {
+    right: 0.5rem;
+}
+
+.horizontal-scroll-wrapper.scrolled .horizontal-scroll-arrow.left {
+  opacity: 1;
+}
+
+.horizontal-scroll-wrapper:not(.at-end) .horizontal-scroll-arrow.right {
+  opacity: 1;
+}
+
+.horizontal-scroll-wrapper.at-start .horizontal-scroll-arrow.left {
+  opacity: 0;
+}
+
+.horizontal-scroll-wrapper.at-end .horizontal-scroll-arrow.right {
+  opacity: 0;
+}
+
+.horizontal-scroll-wrapper:not(.is-overflowing)::before,
+.horizontal-scroll-wrapper:not(.is-overflowing)::after,
+.horizontal-scroll-wrapper:not(.is-overflowing) .horizontal-scroll-arrow {
+  opacity: 0;
 }
 
 .images-in-a-row {
