@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 a {
     color: black;
     text-decoration: none;
@@ -43,6 +47,7 @@ img {
 }
 
 main {
+    /* width: 100%; */
     max-width: 720px;
     margin: 0 auto;
     padding: 1rem 2rem;
@@ -61,10 +66,13 @@ nav {
 }
 
 .horizontal-scroll {
+    width: 100%;
+    max-width: 100%;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     overflow-x: auto;
+    overflow-y: hidden;
     scrollbar-color: #d6cfb9 #fffbee;
     scrollbar-width: thin;
 }
@@ -75,8 +83,14 @@ nav {
     flex-shrink: 0;
 }
 
+.horizontal-scroll img.video-row {
+    max-height: 400px;
+}
+
 .horizontal-scroll-wrapper {
     position: relative;
+    width: 100%;
+    max-width: 100%;
 }
 
 .horizontal-scroll-wrapper::after {
