@@ -133,8 +133,18 @@ nav {
     left: 0.5rem;
 }
 
+.horizontal-scroll-arrow.left > .arrow {
+    display: inline-block;
+    transform: rotate(270deg);
+}
+
 .horizontal-scroll-arrow.right {
     right: 0.5rem;
+}
+
+.horizontal-scroll-arrow.right > .arrow {
+    display: inline-block;
+    transform: rotate(90deg);
 }
 
 .horizontal-scroll-wrapper.scrolled .horizontal-scroll-arrow.left {
