@@ -47,7 +47,7 @@ img {
 }
 
 main {
-    /* width: 100%; */
+    width: 100%;
     max-width: 720px;
     margin: 0 auto;
     padding: 1rem 2rem;
@@ -85,6 +85,13 @@ nav {
 
 .horizontal-scroll img.video-row {
     max-height: 400px;
+}
+
+.horizontal-scroll iframe {
+    width: 225px;
+    height: 400px;
+    flex-shrink: 0;
+    border: 0;
 }
 
 .horizontal-scroll-wrapper {
@@ -162,25 +169,25 @@ nav {
 }
 
 .horizontal-scroll-wrapper.scrolled .horizontal-scroll-arrow.left {
-  opacity: 1;
+    opacity: 1;
 }
 
 .horizontal-scroll-wrapper:not(.at-end) .horizontal-scroll-arrow.right {
-  opacity: 1;
+    opacity: 1;
 }
 
 .horizontal-scroll-wrapper.at-start .horizontal-scroll-arrow.left {
-  opacity: 0;
+    opacity: 0;
 }
 
 .horizontal-scroll-wrapper.at-end .horizontal-scroll-arrow.right {
-  opacity: 0;
+    opacity: 0;
 }
 
 .horizontal-scroll-wrapper:not(.is-overflowing)::before,
 .horizontal-scroll-wrapper:not(.is-overflowing)::after,
 .horizontal-scroll-wrapper:not(.is-overflowing) .horizontal-scroll-arrow {
-  opacity: 0;
+    opacity: 0;
 }
 
 .images-in-a-row {
@@ -213,4 +220,36 @@ nav {
     margin-top: -0.5em;
     text-align: center;
     color: gray;
+}
+
+@media (max-width: 640px) {
+    main {
+        padding: 0.75rem 1rem;
+    }
+
+    .horizontal-scroll {
+        gap: 0.4rem;
+    }
+
+    .horizontal-scroll img {
+        max-height: 180px;
+    }
+
+    .horizontal-scroll img.video-row {
+        max-height: 280px;
+    }
+
+    .horizontal-scroll iframe {
+        width: 170px;
+        height: 300px;
+    }
+
+    .horizontal-scroll-arrow {
+        font-size: 1rem;
+    }
+
+    .horizontal-scroll-wrapper::after,
+    .horizontal-scroll-wrapper::before {
+        width: 1.5rem;
+    }
 }
