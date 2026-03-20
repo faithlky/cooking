@@ -10,5 +10,5 @@
 - I think the converting and renaming can probably be done with a script
 
 ### Other things:
-- I like the hyperlink colour (blue then pink-purple gradient on hover) but I think the blue doesn't really go with the yellow background :( I think it'll look better if the h1 background-color and link underlines are the same colour, but blue h1 background looks weird and yellow underlines look weird. Yellow+blue gradient for the h1 background looks okay but solid colour looks cleaner & nicer. Hmmm. Let's try yellow underlines.
+- I found a colour combo for the `a`s that was I thought looked really nice, but it would fit better if the site background colour was blue or white. I think a yellow theme suits a cooking site better than blue, so I'm just parking the blue combo here to use for future projects: `background-image: linear-gradient(#99d8ff, #99d8ff), linear-gradient(to right, #ff98c5, #db94ff, #8eb0ff);`
 - Horizontal scroll: Crop the photos so they're more evenly sized when made to be the same height. Maybe for landscape photos (aspect ratio > 1), we can make them have a fixed width. But portrait photos will have the same height. 
