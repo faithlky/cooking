@@ -66,6 +66,12 @@ nav {
     padding: 1rem;
 }
 
+.callout-block {
+    background-color: #fff2cc;
+    padding: 1rem;
+    text-align: center;
+}
+
 .centered {
     text-align: center;
 }
@@ -75,6 +81,7 @@ nav {
     max-width: 100%;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 0.5rem;
     overflow-x: auto;
     overflow-y: hidden;
@@ -83,6 +90,7 @@ nav {
 }
 
 .horizontal-scroll img {
+    margin: 0;
     max-height: 350px;
     width: auto;
     flex-shrink: 0;

@@ -1,10 +1,23 @@
 # Cooking website
 
-Hello! This is a website I made to compile the recipes I'm learning from Ah Ma and other family members. 
+Hello! This is a website I made to compile the recipes I'm learning from Ah Ma (maternal grandmother) and other family members, mainly my aunts Kim Kim and Ee. 
 
 I tried to make sure it looks good on mobile devices too because I intend to share the links with relatives who will primarily be accessing them on their phones.
 
 I'll be adding more recipes progressively. I'm also thinking of compiling things I cook from cookbooks, though I won't be uploading the recipes for those because of copyright, just the final products for my own record :)
+
+I wanted to create this website after my recent trip to visit Ah Ma in Penang (March 2026)! I asked my mum what were some of the dishes that Ah Ma cooked for her most often when she was growing up, and which were her favourites. Then I asked Ah Ma if she could teach me how to cook those :-) Her wok used to belong to Kong Kong's grandmother, i.e. my great-great-grandmother! That's amazing!
+
+<details>
+<summary>Recipes so far:</summary>
+
+> - *Jiu Hu Char:* Bangkuang (jicama, something like a turnip) stir-fry with jiuhu (dried shredded cuttlefish) and other vegetables. Eaten in lettuce wraps. My favourite!
+> - *Fried Fish with Lamchut:* I've always liked Ah Ma's fried fish, but this was my first time trying it with the lamchut dipping sauce.
+> - *Bakstik:* My mum's favourite, and Ethan's too. Also my first time trying it. Meat patties with potatoes, tomatoes and onions.
+> - *Tau Yu Bak:* Braised pork belly in soy sauce, with hard-boiled eggs. Ah Ma says this is easy to make :)
+> - *Taugeh Taukwa / Random Vegetable Stir-Fry:* Apparently Taugeh (bean sprouts) + Taukwa (extra firm tofu) is a classic Ah Ma stir-fry combo. I never would've thought of that, but maybe it's because you can buy both taugeh and taukwa from the same pasat/ wet market stall. The stir-fry procedure is the same for any random vegetables, such as spinach and carrots.
+> - *Sardines:* Ah Ma says you don't have to cook it (just squeeze lime/lemon and add sugar), but she prefers to cook it.
+</details>
 
 ## Notes to self
 
@@ -17,7 +30,7 @@ I'll be adding more recipes progressively. I'm also thinking of compiling things
 - For videos: upload to YouTube (unlisted), it'll be a Short so change `shorts/` in the URL to `watch?v=`, click Share and copy the iframe embed. Adjust the width and height.
 
 <details>
-<summary> More tedious process that I used previously for the bakstik recipe, now solved!</summary>
+<summary>More tedious process that I used previously for the bakstik recipe, now solved!</summary>
 
 > 1. upload photos from phone to Temp google drive folder
 > 2. Ctrl+A to download zip file of all the photos, in HEIC
