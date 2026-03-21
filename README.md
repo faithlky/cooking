@@ -19,6 +19,21 @@ I wanted to create this website after my recent trip to visit Ah Ma in Penang (M
 > - *Sardines:* Ah Ma says you don't have to cook it (just squeeze lime/lemon and add sugar), but she prefers to cook it.
 </details>
 
+### Recipe upload feature (in progress)
+
+User inputs: recipe title, one-word recipe name, subtitle, photo of the final dish, ingredients list, and can input as many steps as they want. For each step, they will write a one-word step name, description of the step and upload photos depicting the step, which will be displayed in a horizontal scroll gallery.
+
+Then, the user presses "submit" and a preview of the formatted recipe will be generated.
+
+If all looks good, user will confirm and a zip file will be generated containing the html code for the formatted recipe AND a folder titled recipe_{one-word recipe name} containing all the images, named in the format "{one-word recipe name}_{one-word step name}_1.HEIC".
+
+This recipe upload page should be mobile-friendly as users will be taking photos of the cooking process using their phones, so it should be easy to upload recipes directly from their phones.
+
+Future features to maybe add:
+- Input a unique recipe code name to save progress, so you can come back later to continue and submit.
+
+heic-to-jpg.py: if filename starts with "IMG_": ... else if filename starts with "{recipe_name}_": ...
+
 ## Notes to self
 
 ### Process to upload photos from phone

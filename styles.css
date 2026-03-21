@@ -66,6 +66,10 @@ nav {
     padding: 1rem;
 }
 
+.nav-links a {
+    margin-left: 1rem;
+}
+
 .callout-block {
     background-color: #fff2cc;
     padding: 1rem;
