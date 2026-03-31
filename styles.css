@@ -10,7 +10,9 @@ a {
     background-position: 100% 100%, 0 100%;
     background-repeat: no-repeat;
     transition: background-size 500ms;
-    display: inline-block;
+    box-decoration-break: clone;
+    /* `box-decoration-break: clone` is so that the "underline" background gradient continues across line breaks */
+    /* If you add `display: inline-block`, the hover colour change starts from the start of the first line to the end of the first line before going to the next line. Whereas if you don't add it, all the lines of text will change colour simultaneously */
 }
 
 a:hover {
