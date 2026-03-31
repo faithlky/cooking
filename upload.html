@@ -29,14 +29,20 @@
         <h1>Upload a Recipe</h1>
         <input id="title" placeholder="Recipe title">
         <input id="slug" placeholder="Recipe slug (no spaces, lowercase, used for file names and URL)">
+        <br>
         <input id="subtitle" placeholder="Subtitle">
-
+        <br><br>
+        <label for="cover-image">Cover Image:</label>
+        <input type="file" id="cover-image" accept="image/*" capture="environment">
+        <div id="cover-preview"></div>
+        <br>
         <textarea id="ingredients" placeholder="Ingredients (one per line)"></textarea>
-
+        <br><br>
         <div id="steps"></div>
-
         <button id="add-step">Add step</button>
+        <br>
         <button id="preview-btn">Preview</button>
+        <br>
         <button id="download-btn">Download ZIP</button>
 
         <hr>

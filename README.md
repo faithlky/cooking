@@ -19,20 +19,23 @@ I wanted to create this website after my recent trip to visit Ah Ma in Penang (M
 > - *Sardines:* Ah Ma says you don't have to cook it (just squeeze lime/lemon and add sugar), but she prefers to cook it.
 </details>
 
-### Recipe upload feature (in progress)
+### Recipe upload feature
 
-User inputs: recipe title, one-word recipe name, subtitle, photo of the final dish, ingredients list, and can input as many steps as they want. For each step, they will write a one-word step name, description of the step and upload photos depicting the step, which will be displayed in a horizontal scroll gallery.
+This thing can be found at upload.html and upload.js. The intention was to make it easy to generate a nicely formatted recipe page for any new recipe I want to add, since everything mostly follows the same template. It works okay but it's definitely not meant for public use (only works if you use it in a certain way & sequence, and for a certain outcome). It probably doesn't actually save that much time but I guess it was just nice to code it for fun. The UI is terrible but I'm not going to fix it right now because I'm the only one using it, hehe.
 
-Then, the user presses "submit" and a preview of the formatted recipe will be generated.
+How it's supposed to work:
 
-If all looks good, user will confirm and a zip file will be generated containing the html code for the formatted recipe AND a folder titled recipe_{one-word recipe name} containing all the images, named in the format "{one-word recipe name}_{one-word step name}_1.HEIC".
-
-This recipe upload page should be mobile-friendly as users will be taking photos of the cooking process using their phones, so it should be easy to upload recipes directly from their phones.
+1. Input the recipe title, one-word recipe name (used for the slug and for the folder name), subtitle, photo of the final dish (used for the cover image), and list of ingredients.
+2. Press "Add step" to add as many steps as you want. For each step, write a one-word step name (used for image file names), description of the step, and photos depicting the step, which will be displayed in a horizontal scroll gallery.
+3. Press "Preview" to generate a preview of the formatted recipe.
+4. If all looks good, press "Download ZIP" and a zip file will be generated, containing:
+    - The HTML text for the formatted recipe
+    - A folder titled "recipe_{one-word recipe name}" containing all the images, named in the format "{one-word recipe name}_{one-word step name}_1.HEIC".
+5. Run unzip.py on the zip file, move the extracted .html file to the recipes folder, run heic-to-jpg.py on the HEIC images
 
 Future features to maybe add:
-- Input a unique recipe code name to save progress, so you can come back later to continue and submit.
-
-heic-to-jpg.py: if filename starts with "IMG_": ... else if filename starts with "{recipe_name}_": ...
+- Input a unique recipe code name to save progress, so you can come back later to continue and submit. I don't think GitHub Pages can do this sort of thing, though.
+- Make it mobile-friendly so I can upload the photos directly from my phone to create the zip file on my phone and email the zip file to my computer.
 
 ## Notes to self
 

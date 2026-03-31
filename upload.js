@@ -1,5 +1,19 @@
+// I just realised HEIC images uploaded won't display in the preview
+
 const stepsDiv = document.getElementById("steps");
 let recipeData = { steps: [] };
+let coverImage = null;
+
+const coverInput = document.getElementById("cover-image");
+const coverPreview = document.getElementById("cover-preview");
+
+coverInput.onchange = () => {
+    coverImage = coverInput.files[0];
+
+    if (coverImage) {
+        coverPreview.innerHTML = `<img src="${URL.createObjectURL(coverImage)}">`;
+    }
+};
 
 // add step
 document.getElementById("add-step").onclick = () => {
@@ -13,8 +27,12 @@ document.getElementById("add-step").onclick = () => {
 
     stepEl.innerHTML = `
         <input class="step-name" placeholder="Step name (one word, no spaces)">
+        <br>
         <textarea class="step-description" placeholder="Step description (explain the step)"></textarea>
+        <br>
         <input type="file" class="step-images" multiple accept="image/*" capture="environment">
+        <br>
+        <br>
         <div class="image-list"></div>
     `;
 
@@ -34,7 +52,7 @@ function renderImages(container, stepImages) {
     container.innerHTML = "";
 
     stepImages.images.forEach((file, index) => {
-        const item = document.createElement
+        const item = document.createElement("div");
         item.className = "image-item";
 
         const img = document.createElement("img");
@@ -52,15 +70,15 @@ function renderImages(container, stepImages) {
     new Sortable(container, {
         animation: 150,
         onEnd: (evt) => {
-            const moved = stepData.images.splice(evt.oldIndex, 1)[0];
-            stepData.images.splice(evt.newIndex, 0, moved);
-            renderImages(container, stepData);
+            const moved = stepImages.images.splice(evt.oldIndex, 1)[0];
+            stepImages.images.splice(evt.newIndex, 0, moved);
+            renderImages(container, stepImages);
         }
     });
 }
 
 // generate preview
-document.getElementById("generate-preview").onclick = () => {
+document.getElementById("preview-btn").onclick = () => {
     const title = document.getElementById("title").value;
     const subtitle = document.getElementById("subtitle").value;
     const ingredients = document.getElementById("ingredients").value.split("\n");
@@ -68,10 +86,14 @@ document.getElementById("generate-preview").onclick = () => {
     let html = `
         <h1>${title}</h1>
         <p class="subtitle">${subtitle}</p>
+        ${coverImage ? `<img src="${URL.createObjectURL(coverImage)}" class="cover-img">` : ""}
+        <br>
         <h2>Ingredients</h2>
         <ul>
-            ${ingredients.map(i => `<li>${i}</li>`).join("")}
+            ${ingredients.map(i => `<li>${i}</li>`).join("\n")}
         </ul>
+        <br>
+        <h2>Steps</h2>
     `;
 
     document.querySelectorAll(".step").forEach((stepEl, i) => {
@@ -83,7 +105,7 @@ document.getElementById("generate-preview").onclick = () => {
             <p>${stepDescription}</p>
             <div class="horizontal-scroll-wrapper">
                 <div class="horizontal-scroll">
-                    ${stepImages.images.map(file => `<img src="${URL.createObjectURL(file)}">`).join("")}
+                    ${stepImages.images.map(file => `<img src="${URL.createObjectURL(file)}">`).join("\n")}
                 </div>
                 <div class="horizontal-scroll-arrow left"><span class="arrow">▲</span></div>
                 <div class="horizontal-scroll-arrow right"><span class="arrow">▲</span></div>
@@ -98,8 +120,14 @@ document.getElementById("generate-preview").onclick = () => {
 document.getElementById("download-btn").onclick = async () => {
     const zip = new JSZip();
 
-    const slug = document.getElementById("slug").value;
+    const slug = document.getElementById("slug").value.trim().toLowerCase();
     const folder = zip.folder(`recipe_${slug}`);
+
+    if (coverImage) {
+        const ext = coverImage.name.split(".").pop();
+        const filename = `${slug}_cover.${ext}`;
+        folder.file(filename, coverImage);
+    }
 
     document.querySelectorAll(".step").forEach((stepEl, i) => {
         const stepName = stepEl.querySelector(".step-name").value;
@@ -110,6 +138,8 @@ document.getElementById("download-btn").onclick = async () => {
             folder.file(filename, file);
         });
     });
+
+    const title = document.getElementById("title").value;
 
     const html = `
         <!DOCTYPE html>
